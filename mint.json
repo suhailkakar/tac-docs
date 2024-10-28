@@ -5,7 +5,7 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "./favicon.svg",
   "colors": {
     "primary": "#55DDF0",
     "light": "#55DDF0",
@@ -21,12 +21,6 @@
     "name": "Discord",
     "url": "https://discord.gg/tac-abc-xyz"
   },
-  "tabs": [
-    {
-      "name": "Build with TAC",
-      "url": "guides"
-    }
-  ],
   "anchors": [
     {
       "name": "Discord",

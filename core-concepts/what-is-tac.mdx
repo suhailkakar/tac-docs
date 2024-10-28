@@ -1,0 +1,114 @@
+---
+title: What is TAC
+description: 'Learn more about TON App Chain - how it works and why it exists'
+---
+
+
+TON App Chain (TAC) is a compatibility layer connecting TON with the Ethereum Virtual Machine (EVM). It enables users to access EVM applications directly through their TON wallets, eliminating the need for managing multiple wallets or using traditional bridges.
+
+
+## Key Features
+Here are the key features of TAC and how they work:
+
+### Auto-Generated Proxy Apps
+TAC automatically generates proxy smart contracts on both TON and EVM networks. These proxies handle all the complexities of cross-chain communication behind the scenes, making EVM apps feel native to TON users. When someone wants to interact with an EVM application, they simply use their TON wallet as they normally would - the proxy contracts take care of everything else.
+
+### Secure Cross-Chain Communication 
+At the heart of TAC is a decentralized sequencer network that ensures secure message delivery between chains. This system implements multiple validation layers, where individual sequencers first validate transactions before groups reach consensus. The network requires 66% agreement within each group and further cross-group validation, creating a robust and secure communication channel between TON and EVM chains.
+
+### Economic Security Model
+The network's security relies on sequencer groups who have real economic stake in the system. These groups must stake collateral and actively participate in validation rounds. Good performance earns rewards, while incorrect operations face penalties. This economic model aligns incentives across the network, ensuring participants work to maintain security and efficiency.
+
+## How TAC Works
+
+TAC uses a multi-step process to enable seamless interaction between TON and EVM-based applications:
+### Cross-Chain Messaging Process
+
+<Steps>
+<Step title="User Interaction">
+The process begins when a user connects their TON wallet to interact with an EVM application. The TON proxy contract handles this interaction by locking the user's assets in a bridge wallet and generating a cross-chain message. As soon as this happens, sequencers begin monitoring the transaction.
+</Step>
+
+<Step title="Message Validation">
+The sequencer network takes over processing the message through a sophisticated validation system. Sequencers collect transactions into Merkle trees and work to reach consensus. Each group must internally agree on the transaction's validity before it moves to cross-group validation. Only after passing these checks does the message proceed to execution.
+</Step>
+
+<Step title="Transaction Execution">
+With validation complete, the transaction moves to execution on the EVM side. The system mints or unlocks the necessary assets and calls the target application's method. The results then flow back through the same secure process until confirmation reaches the user's wallet.
+</Step>
+</Steps>
+
+### Epoch-Based Processing
+
+TAC structures its transaction processing using epochs, a time-based system that ensures orderly processing of cross-chain messages. Each epoch is calculated using the formula:
+
+```txt
+EpochId = (now - protocolDeployDate) / epochDuration
+```
+
+Sequencers handle messages within specific timeframes defined by:
+
+```txt
+[protocolDeployDate + EpochId * epochDuration, 
+protocolDeployDate + (EpochId + 1) * epochDuration]
+```
+
+## Network Security
+
+TAC uses a combination of message validation and transaction protection to ensure the security of cross-chain transactions:
+
+### Message Validation
+Security starts with thorough message validation. Sequencers carefully index and validate all transferred assets, ensuring messages exactly match the actual transfers. This system prevents any potential misuse by ensuring target contracts can only access verified assets, with consensus mechanisms preventing double-spending attempts.
+
+### Transaction Protection
+TAC includes robust protection mechanisms for failed transactions. When a transaction fails, the system automatically returns assets to the sender and prevents forwarding to the target chain. A special rollback process handles these cases, ensuring user funds remain secure throughout the process.
+
+## Developer Integration
+
+TAC provides developers with a straightforward JavaScript SDK for integration. Here's how simple it is to use:
+
+```javascript
+const tacSdk = new TacSdk({
+   network: CHAIN.TESTNET
+});
+
+await tacSdk.sendJettonWithProxyMsg({
+   fromAddress: userAddress,
+   jettonAmount: amount,
+   proxyMsg: {
+       evmTargetAddress: targetAddress,
+       methodName: 'method',
+       encodedParameters: params
+   }
+});
+```
+
+### API Access
+Developers can access the network through two public endpoints:
+
+- Mainnet: https://toncenter.com/api/v2/jsonRPC
+- Testnet: https://testnet.toncenter.com/api/v2/jsonRPC
+
+## Network Parameters
+
+Here are the key parameters of the TAC network:
+### Consensus Architecture
+The network operates on a carefully designed consensus system requiring 66% agreement within sequencer groups. This high threshold ensures security while maintaining efficiency. Cross-group consensus adds another layer of validation, with a 24-hour execution window providing ample time for transaction completion while maintaining network responsiveness.
+
+### Economic Framework
+TAC's economic model centers on maintaining network security through financial incentives. The DAO sets minimum stake requirements for participants, while a performance-based reward system encourages reliable operation. Regular stake evaluations and a comprehensive penalty system ensure all participants maintain high standards of service.
+
+## Sample Transaction Flow
+
+Let's walk through a real-world example of a user swapping tokens on an EVM DEX:
+
+The process begins with Transaction Start, where a user connects their TON wallet and selects the amount they want to swap. After approving the transaction, Cross-Chain Processing kicks in - the TON proxy locks their tokens and creates a cross-chain message. Sequencers detect this transaction and begin their validation process.
+
+During Validation, groups form Merkle trees and work to reach consensus both internally and across groups. Once validated, the DEX Interaction phase begins. The EVM proxy receives the validated message, handles the necessary token operations, and executes the swap on the DEX. Finally, during Completion, the transaction confirms and the user receives their swapped tokens.
+
+## Benefits
+
+TAC creates value for multiple stakeholders in the blockchain ecosystem. Users gain the ability to use their familiar TON wallet while accessing the vast world of EVM applications, without dealing with complex bridging processes. Developers benefit from easy integration paths and automatic proxy generation, backed by secure cross-chain messaging and a comprehensive SDK.
+
+For the broader ecosystem, TAC significantly increases TON's utility by making EVM applications accessible to its users. The system's security architecture and scalable design ensure it can grow with increasing demand while maintaining high security standards.
+
