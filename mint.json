@@ -1,34 +1,30 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "TAC",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
-    "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
-    }
+    "primary": "#55DDF0",
+    "light": "#55DDF0",
+    "dark": "#55DDF0"
   },
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:abc@tac.xyz"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Discord",
+    "url": "https://discord.gg/tac-abc-xyz"
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Build with TAC",
+      "url": "guides"
     }
   ],
   "anchors": [
@@ -52,40 +48,48 @@
     {
       "group": "Get Started",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "get-started/introduction",
+        "get-started/quickstart", 
+        "get-started/architecture"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Core Concepts",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "core-concepts/what-is-tac",
+        "core-concepts/proxy-apps",
+        "core-concepts/cross-chain-messaging",
+        "core-concepts/sequencer-network"
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Guides",
       "pages": [
-        "api-reference/introduction"
+        "guides/guide-1"
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Components",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "components/cross-chain-layer",
+        "components/dapp-proxies",
+        "components/excution-layer",
+        "components/sequencer-network"
+      ]
+    },
+    {
+      "group": "Technical References",
+      "pages": [
+        "technical-references/security-model",
+        "technical-references/smart-contracts",
+        "technical-references/transaction-lifecycle",
+        "technical-references/validation-consensus"
       ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "x": "https://x.com/tac",
+    "github": "https://github.com/tac",
+    "linkedin": "https://linkedin.com/company/tac"
   }
 }
