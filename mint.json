@@ -17,6 +17,20 @@
       "url": "mailto:abc@tac.xyz"
     }
   ],
+  "tabs": [
+    {
+      "name": "Validator",
+      "url": "validator"
+    }, 
+    {
+      "name": "Developer",
+      "url": "developer"
+    }, 
+    {
+      "name": "Partner Integrations",
+      "url": "partner-integrations"
+    }
+  ],
   "topbarCtaButton": {
     "name": "Discord",
     "url": "https://discord.gg/tac-abc-xyz"
@@ -63,21 +77,21 @@
       ]
     },
     {
-      "group": "Components",
+      "group": "Validator",
       "pages": [
-        "components/cross-chain-layer",
-        "components/dapp-proxies",
-        "components/excution-layer",
-        "components/sequencer-network"
+        "validator/validator-1"
       ]
-    },
+    }, 
     {
-      "group": "Technical References",
+      "group": "Developer",
       "pages": [
-        "technical-references/security-model",
-        "technical-references/smart-contracts",
-        "technical-references/transaction-lifecycle",
-        "technical-references/validation-consensus"
+        "developer/developer-1"
+      ]
+    }, 
+    {
+      "group": "Partner Integrations",
+      "pages": [
+        "partner-integrations/partner-integrations-1"
       ]
     }
   ],

@@ -16,10 +16,8 @@ TAC consists of three main components:
 ```mermaid
 flowchart TB
    User[TON User] --> TONProxy[TON Proxy App]
-   TONProxy --> CrossChainTON[Cross-Chain Layer TON]
-   CrossChainTON --> SeqNetwork[Sequencer Network]
-   SeqNetwork --> CrossChainEVM[Cross-Chain Layer EVM]
-   CrossChainEVM --> EVMProxy[EVM Proxy App]
+   TONProxy --> DecentralizedBridge[TAC's Decentralized Bridge]
+   DecentralizedBridge --> EVMProxy[EVM Proxy App]
    EVMProxy --> DApp[EVM DApp]
 ```
 
