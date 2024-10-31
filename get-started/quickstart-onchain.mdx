@@ -1,0 +1,45 @@
+---
+title: Onchain components Quick Start
+description: 'Get started with TAC development in minutes'
+---
+
+
+This guide will help you deploying your Solidity code on the TAC EVM. You can then invoke this code on TON side with the TAC SDK. Here you will learn on how to connect directly to the TAC EVM with an EVM wallet and deploy your solidity code
+
+## Chain Params
+
+TAC EVM is a standard EVM chain based on CosmosSDK + Ethermint. These are the chain parameters for TAC:
+
+- Turin (Testnet):
+  - RPC endpoint: https://turin.rpc.tac.build
+  - Blockexplorer: https://turin.explorer.tac.build
+  - Faucet (for gas fees): https://turin.faucet.tac.build
+  - ChainId: 2390
+  - MaxGasPerBlock: XXXX
+  - FeeSchema: EIP-1559
+
+
+## Environment Setup
+To be able to deploy solidity code on TAC you will need to create and configure an EVM wallet like Rabby and then install and configure an EVM IDE like Foundry or HardHat
+
+TODO
+
+## Get TAC Testnet Gastokens
+
+You will need to load some TAC Testnet tokens to pay TAC gasfees to deploy a solidity contract on TAC EVM.
+
+TODO
+
+
+## Deploying Solidity Code
+
+Example - TODO
+
+## Next Steps
+
+Now that you've deployed solidity code on TAC, you need to build/modify a frontend or a Telegram Mini APP (TMA) that will interact with the solidity code you just deployed. There are multiple choices for the Proxy App in this case:
+
+- Option 1: using the single TAC ProxyApp on TON to rely users' transactions on TAC EVM extension network. In this case, you can use the [TAC Sdk](/get-started/quickstart-frontend) to easily implement the frontend with TON Connect.
+- Option 2: you can build your own TAC [Proxy App](/core-concepts/proxy-apps) on TON and build a frontend that will prepare and execute transacitons for your proxy app.
+
+Note: TAC SDK (Option 1) is reccomended if you don't know how to write secure code in funC (TON Native language). Opt for a custom Proxy App only if you need specific business logic to be executed on TON side before triggering Solidity code deployed on TAC EVM.
