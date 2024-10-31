@@ -14,21 +14,21 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:abc@tac.xyz"
+      "url": "mailto:info@tac.build"
     }
   ],
   "tabs": [
     {
-      "name": "Validator",
-      "url": "validator"
-    }, 
-    {
-      "name": "Developer",
-      "url": "developer"
-    }, 
+      "name": "Guides/Tutorials",
+      "url": "tutorials"
+    },
     {
       "name": "Partner Integrations",
       "url": "partner-integrations"
+    },
+    {
+      "name": "Contribute to TAC Network",
+      "url": "evm"
     }
   ],
   "topbarCtaButton": {
@@ -57,7 +57,7 @@
       "group": "Get Started",
       "pages": [
         "get-started/introduction",
-        "get-started/quickstart", 
+        "get-started/quickstart",
         "get-started/architecture"
       ]
     },
@@ -65,38 +65,46 @@
       "group": "Core Concepts",
       "pages": [
         "core-concepts/what-is-tac",
+        "core-concepts/deploying-solidity",
         "core-concepts/proxy-apps",
         "core-concepts/cross-chain-messaging",
         "core-concepts/sequencer-network"
       ]
     },
     {
-      "group": "Guides",
+      "group": "Guides/Tutorials",
       "pages": [
         "guides/guide-1"
       ]
     },
     {
-      "group": "Validator",
-      "pages": [
-        "validator/validator-1"
-      ]
-    }, 
-    {
-      "group": "Developer",
-      "pages": [
-        "developer/developer-1"
-      ]
-    }, 
-    {
       "group": "Partner Integrations",
       "pages": [
         "partner-integrations/partner-integrations-1"
       ]
+    },
+    {
+      "group": "Contribute to TAC Network",
+      "pages": [
+        "evm/introduction-1"
+      ]
+    },
+    {
+      "group": "Run a TAC Node",
+      "pages": [
+        "evm/node-runner"
+      ]
+    },
+    {
+      "group": "Become a Validator",
+      "pages": [
+        "evm/validator-1",
+        "evm/validator-2"
+      ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/tac",
+    "x": "https://x.com/tacBuild",
     "github": "https://github.com/tac",
     "linkedin": "https://linkedin.com/company/tac"
   }
